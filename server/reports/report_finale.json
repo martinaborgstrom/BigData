@@ -1,0 +1,36 @@
+{
+  "paziente": {
+    "nome": "Anna",
+    "cognome": "Rossi",
+    "sesso": "M",
+    "data_nascita": "",
+    "luogo_nascita": "Firenze",
+    "codice_fiscale": "NNR123B",
+    "telefono": "",
+    "via": "",
+    "numero_civico": "",
+    "citta": "",
+    "provincia": "",
+    "cap": "",
+    "patologie_note": "['diabete tipo 2']"
+  },
+  "intervento": {
+    "data": "18 giugno 2025",
+    "ora": "09:15",
+    "luogo": "via Roma 22, Milano",
+    "tipo_intervento": "chiamata per dolore toracico acuto",
+    "descrizione": "Paziente vigile, dolore retrosternale irradiato al braccio sinistro insorto improvvisamente. Somministrate soluzione fisiologica e paracetamolo 1000 mg. Trasportata presso ospedale Niguarda. Personale presente: medico Marco Bianchi, autista Luca Greco."
+  },
+  "parametri_vitali": {
+    "pressione_arteriosa": "145/95 mmHg",
+    "frequenza_cardiaca": "110 BPM",
+    "frequenza_respiratoria": "",
+    "temperatura_corporea": "37,3°C",
+    "saturazione_ossigeno": "92%"
+  },
+  "trasporto_non_effettuato": {},
+  "rilevazioni": {},
+  "trattamenti_e_interventi": {},
+  "personale_equipaggio": {},
+  "presenza_autorita": {}
+}

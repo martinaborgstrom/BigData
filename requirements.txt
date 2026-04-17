@@ -1,0 +1,15 @@
+pymongo
+faker
+openai-whisper
+huggingface_hub
+reportlab
+streamlit
+pandas
+folium
+geopy
+playwright
+bs4
+pdfkit
+sounddevice
+scipy
+python-dotenv

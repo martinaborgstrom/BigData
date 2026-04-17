@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<title>Scheda CRI Venezia</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      margin: 0 auto;
+      padding: 0;
+      width: 800px;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin-bottom: 8px;
+      width: 100%;
+      page-break-inside: avoid;
+    }
+
+    th, td {
+      border: 1px solid #000;
+      padding: 3px;
+      vertical-align: top;
+      page-break-inside: avoid;
+    }
+
+    .section-title {
+      background-color: #eee;
+      font-weight: bold;
+      text-align: center;
+      font-weight: bold;
+      page-break-before: always; 
+    }
+   
+  
+
+    .table-header, .table-row {
+      page-break-inside: avoid;  /* Evita che una riga venga spezzata a metà pagina */
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="time"] {
+      border: none;
+      border-bottom: 1px dotted #000;
+      width: 90px;
+      font-size: 11px;
+    }
+
+    input[type="checkbox"] {
+      width: 10px;
+      height: 10px;
+      vertical-align: middle;
+      accent-color: #000;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 14px;
+      margin: 8px 0;
+    }
+
+    .signature-space {
+      height: 30px;
+      border-bottom: 1px solid #000;
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .checkbox {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      border: 1px solid #000;
+      margin-right: 4px;
+    }
+
+    .notes {
+      height: 80px;
+      border: 1px solid #000;
+      margin-top: 8px;
+    }
+
+    .lesioni {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact;
+        margin: 0 auto;
+      }
+
+      tr, td, table {
+        page-break-inside: auto;
+      }
+
+     
+    }
+
+    @page {
+      size: A4;
+      margin: 20mm;
+    }
+  </style>
+</head>
+<body>
+<h2 style="text-align:center">CROCE ROSSA ITALIANA - Comitato Provinciale di Venezia</h2>
+<table>
+<tr class="section-title">
+<th colspan="2">Chiamata</th>
+<th colspan="2">Ambulanza</th>
+</tr>
+<tr>
+<td>
+      Data: <input name="data" type="text" value=""/><br/>
+      H chiamata: <input name="h_chiamata" type="text" value=""/><br/>
+      H partenza: <input name="h_partenza" type="text" value=""/><br/>
+      H sul posto: <input name="h_sul_posto" type="text" value=""/><br/>
+      H partenza posto: <input name="h_partenza_posto" type="text" value=""/><br/>
+      H in PS: <input name="h_ps" type="text" value=""/><br/>
+</td>
+<td>
+      Luogo intervento: <input name="luogo_intervento" type="text" value=""/><br/>
+      Condizione riferita: <input name="motivo_chiamata" type="text"/><br/>
+</td>
+<td>
+      CRI: <input name="cri" type="text" value=""/><br/>
+</td>
+<td>
+      Sel: <input name="sel" type="text" value=""/><br/>
+</td>
+</tr>
+<tr class="section-title">
+<th colspan="2">Codice</th>
+<th colspan="1">Equipaggio</th>
+<td colspan="1">Attivazioni / Autorità presenti</td>
+</tr>
+<td>
+<strong>Uscita:</strong> <br/>
+<input ''="" 'checked'="" codice_uscita="B" else="" if="" name="codice_uscita" type="checkbox" value="B" {{="" }}=""/> B<br/>
+<input ''="" 'checked'="" codice_uscita="V" else="" if="" name="codice_uscita" type="checkbox" value="V" {{="" }}=""/> V<br/>
+<input ''="" 'checked'="" codice_uscita="G" else="" if="" name="codice_uscita" type="checkbox" value="G" {{="" }}=""/> G<br/>
+<input ''="" 'checked'="" codice_uscita="R" else="" if="" name="codice_uscita" type="checkbox" value="R" {{="" }}=""/> R<br/>
+</td>
+<td>
+<strong>Rientro:</strong><br/>
+<input ''="" 'checked'="" codice_rientro="0" else="" if="" name="codice_rientro" type="checkbox" value="0" {{="" }}=""/> 0 - Annullato<br/>
+<input ''="" 'checked'="" codice_rientro="1" else="" if="" name="codice_rientro" type="checkbox" value="1" {{="" }}=""/> 1 - Bianco<br/>
+<input ''="" 'checked'="" codice_rientro="2" else="" if="" name="codice_rientro" type="checkbox" value="2" {{="" }}=""/> 2 - Verde<br/>
+<input ''="" 'checked'="" codice_rientro="3" else="" if="" name="codice_rientro" type="checkbox" value="3" {{="" }}=""/> 3 - Giallo<br/>
+<input ''="" 'checked'="" codice_rientro="4" else="" if="" name="codice_rientro" type="checkbox" value="4" {{="" }}=""/> 4 - Rosso<br/>
+</td>
+<td>
+        Aut.: <input name="aut" type="text" value=""/><br/>
+        Socc1.: <input name="socc_1" type="text" value=""/><br/>
+        Socc2.: <input name="socc_2" type="text" value=""/><br/>
+        Socc3.: <input name="socc_3" type="text" value=""/><br/>
+        IP: <input name="ip" type="text" value=""/><br/>
+        Medico: <input name="medico" type="text" value=""/><br/>
+</td>
+<td>
+<input name="autorita_presenti" type="checkbox" value="Carabinieri"/> Carabinieri<br/>
+<input name="autorita_presenti" type="checkbox" value="Polizia Stradale"/> Polizia Stradale<br/>
+<input name="autorita_presenti" type="checkbox" value="Polizia Municipale"/> Polizia Municipale<br/>
+<input name="autorita_presenti" type="checkbox" value="Vigili del Fuoco"/> Vigili del Fuoco<br/>
+<input name="autorita_presenti" type="checkbox" value="Guardia medica"/> Guardia medica<br/>
+<input name="autorita_presenti" type="checkbox" value="Altra ambulanza"/> Altra ambulanza<br/>
+<input name="autorita_presenti" type="checkbox" value="Automedica"/> Automedica<br/>
+<input name="autorita_presenti" type="checkbox" value="Elisoccorso"/> Elisoccorso<br/>
+<input name="autorita_presenti" type="checkbox" value="Altro"/> Altro<br/>
+</td>
+<tr class="section-title">
+<td colspan="1">Dati anagrafici paziente</td>
+<td colspan="1">Causa trasporto non effettuato</td>
+<td colspan="1">Decesso (firma del medico)</td>
+<td colspan="1">Rifiuto (firma dell'interessato)</td>
+</tr>
+<td>
+      Cognome Nome: <input name="cognome_nome" type="text" value="Rossi Anna"/><br/><br/>
+<strong>Sesso:</strong><br/>
+<input id="femmina" name="sesso" type="radio" value="F"/>
+<label for="femmina">F</label><br/>
+<input checked="checked" id="maschio" name="sesso" type="radio" value="M"/>
+<label for="maschio">M</label><br/>
+<script>
+      const sesso = ""; // lasciato vuoto apposta
+
+      if (sesso && (sesso === "F" || sesso === "M")) {
+        document.getElementById(sesso === "F" ? "femmina" : "maschio").checked = true;
+      }
+    </script>
+<br/>
+      Nato il <input name="nato_il" type="date" value=""/> a <input name="nato_a" type="text" value="Firenze"/> <br/>
+      Residente a: <input name="residente_a" type="text" value=""/> Prov: <input name="provincia_residenza" type="text" value=""/><br/>
+      Via: <input name="via" type="text" value=""/>  N°: <input name="numero_civico" type="text" value=""/><br/>
+      CAP: <input name="cap" type="text" value=""/> <br/>
+      Telefono: <input name="telefono" type="text" value=""/> <br/>
+      Codice Fiscale: <input name="codice_fiscale" type="text" value="NNR123B"/> <br/>
+<input name="dati_dichiarati" type="checkbox" value="Documento"/> Altro: <input name="altro_dati" type="text" value="Documento"/>
+</td>
+<td>
+<input name="trasporto_non_effettuato" type="checkbox" value="Effettuato da altra ambulanza"/> Effettuato da altra ambulanza<br/>
+<input name="trasporto_non_effettuato" type="checkbox" value="Effettuato da elisoccorso"/> Effettuato da elisoccorso<br/>
+<input name="trasporto_non_effettuato" type="checkbox" value="Non necessita"/> Non necessita<br/>
+<input name="trasporto_non_effettuato" type="checkbox" value="Trattato sul posto"/> Trattato sul posto<br/>
+<input name="trasporto_non_effettuato" type="checkbox" value="Sospeso da centrale"/> Sospeso da centrale<br/>
+<input name="trasporto_non_effettuato" type="checkbox" value="Non reperito"/> Non reperito<br/>
+<input name="trasporto_non_effettuato" type="checkbox" value="Scherzo"/> Scherzo<br/>
+</td>
+<td>
+      Ora decesso: <input name="ora_decesso" type="time" value=""/><br/>
+      Firma: <input name="firma_medico" type="text" value=""/>
+</td>
+<td>
+      Firma: <input name="firma_interessato" type="text" value=""/>
+</td>
+<tr class="section-title">
+<td colspan="4">Rilevazioni</td>
+</tr>
+<tr>
+<th>Parametro</th><th>T1 H:</th><th>T2 H:</th><th>T3 H:</th>
+</tr>
+<tr>
+<tr>
+<tr>
+<tr>
+<td>Coscienza</td>
+<!-- Coscienza T1 -->
+<td>
+<input id="coscienza_t1_sveglio" name="coscienza_t1" type="radio" value="Sveglio"/>
+<label for="coscienza_t1_sveglio">Sveglio</label><br/>
+<input id="coscienza_t1_voce" name="coscienza_t1" type="radio" value="Risp. Voce"/>
+<label for="coscienza_t1_voce">Risp. Voce</label><br/>
+<input id="coscienza_t1_dolore" name="coscienza_t1" type="radio" value="Risp. Dolore"/>
+<label for="coscienza_t1_dolore">Risp. Dolore</label><br/>
+<input id="coscienza_t1_incosciente" name="coscienza_t1" type="radio" value="Incosciente"/>
+<label for="coscienza_t1_incosciente">Incosciente</label><br/>
+</td>
+<!-- Coscienza T2 -->
+<td>
+<input id="coscienza_t2_sveglio" name="coscienza_t2" type="radio" value="Sveglio"/>
+<label for="coscienza_t2_sveglio">Sveglio</label><br/>
+<input id="coscienza_t2_voce" name="coscienza_t2" type="radio" value="Risp. Voce"/>
+<label for="coscienza_t2_voce">Risp. Voce</label><br/>
+<input id="coscienza_t2_dolore" name="coscienza_t2" type="radio" value="Risp. Dolore"/>
+<label for="coscienza_t2_dolore">Risp. Dolore</label><br/>
+<input id="coscienza_t2_incosciente" name="coscienza_t2" type="radio" value="Incosciente"/>
+<label for="coscienza_t2_incosciente">Incosciente</label><br/>
+</td>
+<!-- Coscienza T3 -->
+<td>
+<input id="coscienza_t3_sveglio" name="coscienza_t3" type="radio" value="Sveglio"/>
+<label for="coscienza_t3_sveglio">Sveglio</label><br/>
+<input id="coscienza_t3_voce" name="coscienza_t3" type="radio" value="Risp. Voce"/>
+<label for="coscienza_t3_voce">Risp. Voce</label><br/>
+<input id="coscienza_t3_dolore" name="coscienza_t3" type="radio" value="Risp. Dolore"/>
+<label for="coscienza_t3_dolore">Risp. Dolore</label><br/>
+<input id="coscienza_t3_incosciente" name="coscienza_t3" type="radio" value="Incosciente"/>
+<label for="coscienza_t3_incosciente">Incosciente</label><br/>
+</td>
+</tr>
+<tr>
+<td>Cute</td>
+<!-- Cute T1 -->
+<td>
+<input id="cute_t1_normale" name="cute_t1" type="radio" value="Normale"/>
+<label for="cute_t1_normale">Normale</label><br/>
+<input id="cute_t1_pallida" name="cute_t1" type="radio" value="Pallida"/>
+<label for="cute_t1_pallida">Pallida</label><br/>
+<input id="cute_t1_cianotica" name="cute_t1" type="radio" value="Cianotica"/>
+<label for="cute_t1_cianotica">Cianotica</label><br/>
+<input id="cute_t1_sudata" name="cute_t1" type="radio" value="Sudata"/>
+<label for="cute_t1_sudata">Sudata</label><br/>
+</td>
+<!-- Cute T2 -->
+<td>
+<input id="cute_t2_normale" name="cute_t2" type="radio" value="Normale"/>
+<label for="cute_t2_normale">Normale</label><br/>
+<input id="cute_t2_pallida" name="cute_t2" type="radio" value="Pallida"/>
+<label for="cute_t2_pallida">Pallida</label><br/>
+<input id="cute_t2_cianotica" name="cute_t2" type="radio" value="Cianotica"/>
+<label for="cute_t2_cianotica">Cianotica</label><br/>
+<input id="cute_t2_sudata" name="cute_t2" type="radio" value="Sudata"/>
+<label for="cute_t2_sudata">Sudata</label><br/>
+</td>
+<!-- Cute T3 -->
+<td>
+<input id="cute_t3_normale" name="cute_t3" type="radio" value="Normale"/>
+<label for="cute_t3_normale">Normale</label><br/>
+<input id="cute_t3_pallida" name="cute_t3" type="radio" value="Pallida"/>
+<label for="cute_t3_pallida">Pallida</label><br/>
+<input id="cute_t3_cianotica" name="cute_t3" type="radio" value="Cianotica"/>
+<label for="cute_t3_cianotica">Cianotica</label><br/>
+<input id="cute_t3_sudata" name="cute_t3" type="radio" value="Sudata"/>
+<label for="cute_t3_sudata">Sudata</label><br/>
+</td>
+</tr>
+<tr>
+<td>Respiro</td>
+<td>
+<input id="respiro_t1_normale" name="respiro_t1" type="radio" value="Normale"/>
+<label for="respiro_t1_normale">Normale</label><br/>
+<input id="respiro_t1_tachipnoico" name="respiro_t1" type="radio" value="Tachipnoico"/>
+<label for="respiro_t1_tachipnoico">Tachipnoico</label><br/>
+<input id="respiro_t1_bradipnoico" name="respiro_t1" type="radio" value="Bradipnoico"/>
+<label for="respiro_t1_bradipnoico">Bradipnoico</label><br/>
+<input id="respiro_t1_assente" name="respiro_t1" type="radio" value="Assente"/>
+<label for="respiro_t1_assente">Assente</label><br/>
+</td>
+<td>
+<input id="respiro_t2_normale" name="respiro_t2" type="radio" value="Normale"/>
+<label for="respiro_t2_normale">Normale</label><br/>
+<input id="respiro_t2_tachipnoico" name="respiro_t2" type="radio" value="Tachipnoico"/>
+<label for="respiro_t2_tachipnoico">Tachipnoico</label><br/>
+<input id="respiro_t2_bradipnoico" name="respiro_t2" type="radio" value="Bradipnoico"/>
+<label for="respiro_t2_bradipnoico">Bradipnoico</label><br/>
+<input id="respiro_t2_assente" name="respiro_t2" type="radio" value="Assente"/>
+<label for="respiro_t2_assente">Assente</label><br/>
+</td>
+<td>
+<input id="respiro_t3_normale" name="respiro_t3" type="radio" value="Normale"/>
+<label for="respiro_t3_normale">Normale</label><br/>
+<input id="respiro_t3_tachipnoico" name="respiro_t3" type="radio" value="Tachipnoico"/>
+<label for="respiro_t3_tachipnoico">Tachipnoico</label><br/>
+<input id="respiro_t3_bradipnoico" name="respiro_t3" type="radio" value="Bradipnoico"/>
+<label for="respiro_t3_bradipnoico">Bradipnoico</label><br/>
+<input id="respiro_t3_assente" name="respiro_t3" type="radio" value="Assente"/>
+<label for="respiro_t3_assente">Assente</label><br/>
+</td>
+</tr>
+<tr>
+<td>SpO₂</td>
+<td><input id="saturazione_t1" name="saturazione_t1" type="text" value=""/></td>
+<td><input id="saturazione_t2" name="saturazione_t2" type="text" value=""/></td>
+<td><input id="saturazione_t3" name="saturazione_t3" type="text" value=""/></td>
+</tr>
+<tr>
+<td>FC bpm</td>
+<td><input id="frequenza_cardiaca_t1" name="frequenza_cardiaca_t1" type="text" value=""/></td>
+<td><input id="frequenza_cardiaca_t2" name="frequenza_cardiaca_t2" type="text" value=""/></td>
+<td><input id="frequenza_cardiaca_t3" name="frequenza_cardiaca_t3" type="text" value=""/></td>
+</tr>
+<tr>
+<td>PA mmHg</td>
+<td><input id="pressione_t1" name="pressione_t1" type="text" value=""/></td>
+<td><input id="pressione_t2" name="pressione_t2" type="text" value=""/></td>
+<td><input id="pressione_t3" name="pressione_t3" type="text" value=""/></td>
+</tr>
+<tr>
+<td>Glic. Mg/dl</td>
+<td><input id="glicemia_t1" name="glicemia_t1" type="text" value=""/></td>
+<td><input id="glicemia_t2" name="glicemia_t2" type="text" value=""/></td>
+<td><input id="glicemia_t3" name="glicemia_t3" type="text" value=""/></td>
+</tr>
+<tr>
+<td>Temp. °C</td>
+<td><input id="temperatura_t1" name="temperatura_t1" type="text" value=""/></td>
+<td><input id="temperatura_t2" name="temperatura_t2" type="text" value=""/></td>
+<td><input id="temperatura_t3" name="temperatura_t3" type="text" value=""/></td>
+</tr>
+<tr class="section-title page-break">
+<td colspan="4">Glasgow Coma Scale</td>
+</tr>
+<tr>
+<th>Parametri</th><th>T1</th><th>T2</th><th>T3</th>
+</tr>
+<td>
+      Apertura Occhi<br/>
+</td>
+<td>
+<input id="apertura_occhi_t1_spontanea" name="apertura_occhi_t1" type="radio" value="4 - Spontanea"/>
+<label for="apertura_occhi_t1_spontanea">4 - Spontanea</label><br/>
+<input id="apertura_occhi_t1_voce" name="apertura_occhi_t1" type="radio" value="3 - Alla voce"/>
+<label for="apertura_occhi_t1_voce">3 - Alla voce</label><br/>
+<input id="apertura_occhi_t1_dolore" name="apertura_occhi_t1" type="radio" value="2 - Al dolore"/>
+<label for="apertura_occhi_t1_dolore">2 - Al dolore</label><br/>
+<input id="apertura_occhi_t1_nessuna" name="apertura_occhi_t1" type="radio" value="1 - Nessuna"/>
+<label for="apertura_occhi_t1_nessuna">1 - Nessuna</label><br/>
+</td>
+<td>
+<input id="apertura_occhi_t2_spontanea" name="apertura_occhi_t2" type="radio" value="4 - Spontanea"/>
+<label for="apertura_occhi_t2_spontanea">4 - Spontanea</label><br/>
+<input id="apertura_occhi_t2_voce" name="apertura_occhi_t2" type="radio" value="3 - Alla voce"/>
+<label for="apertura_occhi_t2_voce">3 - Alla voce</label><br/>
+<input id="apertura_occhi_t2_dolore" name="apertura_occhi_t2" type="radio" value="2 - Al dolore"/>
+<label for="apertura_occhi_t2_dolore">2 - Al dolore</label><br/>
+<input id="apertura_occhi_t2_nessuna" name="apertura_occhi_t2" type="radio" value="1 - Nessuna"/>
+<label for="apertura_occhi_t2_nessuna">1 - Nessuna</label><br/>
+</td>
+<td>
+<input id="apertura_occhi_t3_spontanea" name="apertura_occhi_t3" type="radio" value="4 - Spontanea"/>
+<label for="apertura_occhi_t3_spontanea">4 - Spontanea</label><br/>
+<input id="apertura_occhi_t3_voce" name="apertura_occhi_t3" type="radio" value="3 - Alla voce"/>
+<label for="apertura_occhi_t3_voce">3 - Alla voce</label><br/>
+<input id="apertura_occhi_t3_dolore" name="apertura_occhi_t3" type="radio" value="2 - Al dolore"/>
+<label for="apertura_occhi_t3_dolore">2 - Al dolore</label><br/>
+<input id="apertura_occhi_t3_nessuna" name="apertura_occhi_t3" type="radio" value="1 - Nessuna"/>
+<label for="apertura_occhi_t3_nessuna">1 - Nessuna</label><br/>
+</td>
+<tr>
+<th></th><th>T1</th><th>T2</th><th>T3</th>
+</tr>
+<td>
+     Risposta verbale<br/>
+</td>
+<td>
+<input id="risposta_verbale_t1_orientata" name="risposta_verbale_t1" type="radio" value="5 - Orientata"/>
+<label for="risposta_verbale_t1_orientata">5 - Orientata</label><br/>
+<input id="risposta_verbale_t1_confusa" name="risposta_verbale_t1" type="radio" value="4 - Confusa"/>
+<label for="risposta_verbale_t1_confusa">4 - Confusa</label><br/>
+<input id="risposta_verbale_t1_inappropriata" name="risposta_verbale_t1" type="radio" value="3 - Parole Inappropriate"/>
+<label for="risposta_verbale_t1_inappropriata">3 - Parole Inappropriate</label><br/>
+<input id="risposta_verbale_t1_incomprensibili" name="risposta_verbale_t1" type="radio" value="2 - Suoni Incomprensibili"/>
+<label for="risposta_verbale_t1_incomprensibili">2 - Suoni Incomprensibili</label><br/>
+<input id="risposta_verbale_t1_nessuna" name="risposta_verbale_t1" type="radio" value="1 - Nessuna"/>
+<label for="risposta_verbale_t1_nessuna">1 - Nessuna</label><br/>
+</td>
+<td>
+<input id="risposta_verbale_t2_orientata" name="risposta_verbale_t2" type="radio" value="5 - Orientata"/>
+<label for="risposta_verbale_t2_orientata">5 - Orientata</label><br/>
+<input id="risposta_verbale_t2_confusa" name="risposta_verbale_t2" type="radio" value="4 - Confusa"/>
+<label for="risposta_verbale_t2_confusa">4 - Confusa</label><br/>
+<input id="risposta_verbale_t2_inappropriata" name="risposta_verbale_t2" type="radio" value="3 - Parole Inappropriate"/>
+<label for="risposta_verbale_t2_inappropriata">3 - Parole Inappropriate</label><br/>
+<input id="risposta_verbale_t2_incomprensibili" name="risposta_verbale_t2" type="radio" value="2 - Suoni Incomprensibili"/>
+<label for="risposta_verbale_t2_incomprensibili">2 - Suoni Incomprensibili</label><br/>
+<input id="risposta_verbale_t2_nessuna" name="risposta_verbale_t2" type="radio" value="1 - Nessuna"/>
+<label for="risposta_verbale_t2_nessuna">1 - Nessuna</label><br/>
+</td>
+<td>
+<input id="risposta_verbale_t3_orientata" name="risposta_verbale_t3" type="radio" value="5 - Orientata"/>
+<label for="risposta_verbale_t3_orientata">5 - Orientata</label><br/>
+<input id="risposta_verbale_t3_confusa" name="risposta_verbale_t3" type="radio" value="4 - Confusa"/>
+<label for="risposta_verbale_t3_confusa">4 - Confusa</label><br/>
+<input id="risposta_verbale_t3_inappropriata" name="risposta_verbale_t3" type="radio" value="3 - Parole Inappropriate"/>
+<label for="risposta_verbale_t3_inappropriata">3 - Parole Inappropriate</label><br/>
+<input id="risposta_verbale_t3_incomprensibili" name="risposta_verbale_t3" type="radio" value="2 - Suoni Incomprensibili"/>
+<label for="risposta_verbale_t3_incomprensibili">2 - Suoni Incomprensibili</label><br/>
+<input id="risposta_verbale_t3_nessuna" name="risposta_verbale_t3" type="radio" value="1 - Nessuna"/>
+<label for="risposta_verbale_t3_nessuna">1 - Nessuna</label><br/>
+</td>
+<tr>
+<th></th><th>T1</th><th>T2</th><th>T3</th>
+</tr>
+<td>
+      Risposta motoria<br/>
+</td>
+<td>
+<input id="risposta_motoria_t1_obbedisce" name="risposta_motoria_t1" type="radio" value="6 - Obbedisce"/>
+<label for="risposta_motoria_t1_obbedisce">6 - Obbedisce</label><br/>
+<input id="risposta_motoria_t1_localizza" name="risposta_motoria_t1" type="radio" value="5 - Localizza Il Dolore"/>
+<label for="risposta_motoria_t1_localizza">5 - Localizza Il Dolore</label><br/>
+<input id="risposta_motoria_t1_retrae" name="risposta_motoria_t1" type="radio" value="4 - Retrae Al Dolore"/>
+<label for="risposta_motoria_t1_retrae">4 - Retrae Al Dolore</label><br/>
+<input id="risposta_motoria_t1_flessione" name="risposta_motoria_t1" type="radio" value="3 - Flette Al Dolore"/>
+<label for="risposta_motoria_t1_flessione">3 - Flette Al Dolore</label><br/>
+<input id="risposta_motoria_t1_estensione" name="risposta_motoria_t1" type="radio" value="2 - Estende Al Dolore"/>
+<label for="risposta_motoria_t1_estensione">2 - Estende Al Dolore</label><br/>
+<input id="risposta_motoria_t1_nessuna" name="risposta_motoria_t1" type="radio" value="1 - Nessuna"/>
+<label for="risposta_motoria_t1_nessuna">1 - Nessuna</label><br/>
+</td>
+<td>
+<input id="risposta_motoria_t2_obbedisce" name="risposta_motoria_t2" type="radio" value="6 - Obbedisce"/>
+<label for="risposta_motoria_t2_obbedisce">6 - Obbedisce</label><br/>
+<input id="risposta_motoria_t2_localizza" name="risposta_motoria_t2" type="radio" value="5 - Localizza Il Dolore"/>
+<label for="risposta_motoria_t2_localizza">5 - Localizza Il Dolore</label><br/>
+<input id="risposta_motoria_t2_retrae" name="risposta_motoria_t2" type="radio" value="4 - Retrae Al Dolore"/>
+<label for="risposta_motoria_t2_retrae">4 - Retrae Al Dolore</label><br/>
+<input id="risposta_motoria_t2_flessione" name="risposta_motoria_t2" type="radio" value="3 - Flette Al Dolore"/>
+<label for="risposta_motoria_t2_flessione">3 - Flette Al Dolore</label><br/>
+<input id="risposta_motoria_t2_estensione" name="risposta_motoria_t2" type="radio" value="2 - Estende Al Dolore"/>
+<label for="risposta_motoria_t2_estensione">2 - Estende Al Dolore</label><br/>
+<input id="risposta_motoria_t2_nessuna" name="risposta_motoria_t2" type="radio" value="1 - Nessuna"/>
+<label for="risposta_motoria_t2_nessuna">1 - Nessuna</label><br/>
+</td>
+<td>
+<input id="risposta_motoria_t3_obbedisce" name="risposta_motoria_t3_obbedisce" type="radio" value="6 - Obbedisce"/>
+<label for="risposta_motoria_t3_obbedisce">6 - Obbedisce</label><br/>
+<input id="risposta_motoria_t3_localizza" name="risposta_motoria_t3" type="radio" value="5 - Localizza Il Dolore"/>
+<label for="risposta_motoria_t3_localizza">5 - Localizza Il Dolore</label><br/>
+<input id="risposta_motoria_t3_retrae" name="risposta_motoria_t3" type="radio" value="4 - Retrae Al Dolore"/>
+<label for="risposta_motoria_t3_retrae">4 - Retrae Al Dolore</label><br/>
+<input id="risposta_motoria_t3_flessione" name="risposta_motoria_t3" type="radio" value="3 - Flette Al Dolore"/>
+<label for="risposta_motoria_t3_flessione">3 - Flette Al Dolore</label><br/>
+<input id="risposta_motoria_t3_estensione" name="risposta_motoria_t3" type="radio" value="2 - Estende Al Dolore"/>
+<label for="risposta_motoria_t3_estensione">2 - Estende Al Dolore</label><br/>
+<input id="risposta_motoria_t3_nessuna" name="risposta_motoria_t3" type="radio" value="1 - Nessuna"/>
+<label for="risposta_motoria_t3_nessuna">1 - Nessuna</label><br/>
+</td>
+<tr>
+<tr class="section-title">
+<td colspan="1">Pupille</td>
+<td colspan="1">Lesioni riscontrate</td>
+<td colspan="2">Responsabilità personale</td>
+</tr>
+<td style="text-align: center;">
+<!-- Checkboxes -->
+<input name="parametri_vitali" type="checkbox" value="Pupille Reagenti"/>Pupille Reagenti <br/>
+<input name="parametri_vitali" type="checkbox" value="Pupille Non Reagenti"/>Pupille Non Reagenti <br/>
+<input name="parametri_vitali" type="checkbox" value="Pupille Anisocorie"/> Pupille Anisocorie <br/>
+<input name="parametri_vitali" type="checkbox" value="Pupille Non Anisocorie"/> Pupille Non Anisocorie <br/>
+<!-- Input Text -->
+<input name="diametro_DX_pupilla" placeholder="Diametro DX (mm)" type="text" value="0.0"/>
+<input name="diametro_SX_pupilla" placeholder="Diametro SX (mm)" type="text" value="0.0"/>
+</td>
+<td style="text-align: center;">
+<input name="lesioni_riscontrate" type="checkbox" value="Amputazione"/> Amputazione
+      <input name="lesioni_riscontrate" type="checkbox" value="Deformità"/> Deformità
+      <input name="lesioni_riscontrate" type="checkbox" value="Dolore"/> Dolore<br/>
+<input name="lesioni_riscontrate" type="checkbox" value="Emorragia"/> Emorragia
+      <input name="lesioni_riscontrate" type="checkbox" value="Ferita profonda"/> Ferita profonda
+      <input name="lesioni_riscontrate" type="checkbox" value="Ferita superficiale"/> Ferita superficiale<br/>
+<input name="lesioni_riscontrate" type="checkbox" value="Trauma chiuso"/> Trauma chiuso
+      <input name="lesioni_riscontrate" type="checkbox" value="Ustione"/> Ustione
+      <input name="lesioni_riscontrate" type="checkbox" value="Obiett. motorio"/> Obiett. motorio<br/>
+<input name="lesioni_riscontrate" type="checkbox" value="Sensibilità assente"/> Sensibilità assente
+      <input name="lesioni_riscontrate" type="checkbox" value="Frattura sosp."/> Frattura sosp.
+      <input name="lesioni_riscontrate" type="checkbox" value="Lussazione"/> Lussazione<br/>
+</td>
+<td colspan="2" style="border:1px solid #ccc; padding:8px; max-width: 400px;">
+<div style="white-space: pre-wrap; font-family: inherit;">
+    Io sottoscrittə, consapevole delle mie attuali condizioni di salute e della necessità, secondo quanto comunicatomi, 
+    di ricevere assistenza sanitaria e/o essere trasportatə presso una struttura ospedaliera, 
+    nonché informato/a dei potenziali rischi futuri connessi a un eventuale rifiuto, in pieno possesso delle mie facoltà mentali,
+    dichiaro espressamente di rifiutare il soccorso e/o il trasporto presso l’ospedale suggerito.
+  </div>
+</td>
+</tr>
+<tr class="section-title">
+<td colspan="4">Provvedimenti</td>
+</tr>
+<tr>
+<th>Respiro</th><th>Circolo</th><th>Immobilizzazione</th><th>Altro</th>
+</tr>
+<td>
+<input name="provvedimenti_respiro" type="checkbox" value="Aspirazione"/> Aspirazione<br/>
+<input name="provvedimenti_respiro" type="checkbox" value="Cannula orofaringea"/> Cannula orofaringea<br/>
+<input name="provvedimenti_respiro" type="checkbox" value="Monitor SpO₂"/> Monitor SpO₂<br/>
+<input name="provvedimenti_respiro" type="checkbox" value="O₂ l/min"/> O₂ l/min<br/>
+<input name="provvedimenti_respiro" type="checkbox" value="Ventilazione"/> Ventilazione<br/>
+<input name="provvedimenti_respiro" type="checkbox" value="Intubazione"/> Intubazione<br/>
+</td>
+<td>
+<input name="provvedimenti_circolo" type="checkbox" value="Emostasi"/> Emostasi<br/>
+<input name="provvedimenti_circolo" type="checkbox" value="Accesso venoso"/> Accesso venoso<br/>
+<input name="provvedimenti_circolo" type="checkbox" value="Monitor ECG"/> Monitor ECG<br/>
+<input name="provvedimenti_circolo" type="checkbox" value="Monitor NIBP"/> Monitor NIBP<br/>
+<input name="provvedimenti_circolo" type="checkbox" value="MCE"/>MCE<br/>
+<input name="provvedimenti_circolo" type="checkbox" value="DAE "/>DAE<br/>
+</td>
+<td>
+<input name="provvedimenti_immobilizzazione" type="checkbox" value="Collare cervicale"/> Collare cervicale<br/>
+<input name="provvedimenti_immobilizzazione" type="checkbox" value="KED"/> KED<br/>
+<input name="provvedimenti_immobilizzazione" type="checkbox" value="Barella cucchiaio"/> Barella cucchiaio<br/>
+<input name="provvedimenti_immobilizzazione" type="checkbox" value="Tavola spinale"/> Tavola spinale<br/>
+<input name="provvedimenti_immobilizzazione" type="checkbox" value="Steccobenda"/> Steccobenda<br/>
+<input name="provvedimenti_immobilizzazione" type="checkbox" value="Materassino decompressione"/> Materassino decompressione<br/>
+</td>
+
+<td>
+<input name="provvedimenti_altro" type="checkbox" value="Coperta isotermica"/> Coperta isotermica<br/>
+<input name="provvedimenti_altro" type="checkbox" value="Medicazione"/> Medicazione<br/>
+<input name="provvedimenti_altro" type="checkbox" value="Ghiaccio"/> Ghiaccio<br/>
+<input name="provvedimenti_altro" type="checkbox" value="Osservazione"/> Osservazione<br/>
+</td>
+<tr class="section-title">
+<td colspan="4">
+      Annotazioni
+    </td>
+</tr>
+<td colspan="4">
+<input name="annotazioni" style="width: 100%;" type="text" value="['diabete tipo 2']"/>
+</td>
+</tr></tr></tr></table>
+</body>
+</html>
